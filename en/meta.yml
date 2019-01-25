@@ -1,11 +1,15 @@
-title: c3-wolfram-day-night
+title: Day Time Night Time Interactive Map
 hero_image: images/banner.png
-description: c3-wolfram-day-night description
+description:
 version: 4
 listed: false
 copyedit: false
-last_tested: "2019-01-25"
+last_tested: "2018-12-06"
 steps:
   - title: Introduction
-  - title: Step title
-  - title: What next?
+  - title: Building a Map
+  - title: Highlighting a Country
+  - title: Combining Features
+  - title: Adding Information to Your Map
+  - title: Making your Map Interactive
+  - title: Building the Interactive Map

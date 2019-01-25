@@ -1,11 +1,11 @@
-# c3-wolfram-day-night
+# blank-template
 
-![c3-wolfram-day-night](banner.png)
+![blank-template](banner.png)
 
-Find the project online at [projects.raspberrypi.org/en/projects/c3-wolfram-day-night](https://projects.raspberrypi.org/en/projects/c3-wolfram-day-night)
+Find the project online at [projects.raspberrypi.org/en/projects/blank-template](https://projects.raspberrypi.org/en/projects/blank-template)
 
 ## Resources
-For solutions and project materials, see [en/resources](https://github.com/raspberrypilearning/c3-wolfram-day-night/tree/master/en/resources)
+For solutions and project materials, see [en/resources](https://github.com/raspberrypilearning/blank-template/tree/master/en/resources)
 
 ## Contributing
 See [CONTRIBUTING.md](CONTRIBUTING.md)
