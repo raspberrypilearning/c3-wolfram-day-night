@@ -1,122 +1,35 @@
-## Adding Information to Your Map
+## Making your Map Interactive
 
-In this step, you're going to add a tool tip to your map, so that when people hover their cursor over the country you highlighted, they can get some information about that country.
+So far, you've created a world map with the day and night hemispheres, where you can see a specific country. But what if you don't want to see information for the United States? It would take too much effort to change the code every time you wanted to see a different country. You could set up a little tool which allows your user to chose a country from a drop down menu.
 
-
---- task ---
-First, make a really simple tool tip, which just displays "USA" when you hover over the United States on the map.
+In order to make a drop down menu of countries, we're going to need a list of every country in the world. Luckily, Wolfram has one built in!
 
 ```
-GeoGraphics[
- {
-  NightHemisphere[],
-  EdgeForm[Black],
-  FaceForm[Red],
-  Tooltip[
-   {Polygon[United States]},
-   "USA"
-   ]
-  },
- GeoRange -> "World"]
- ```
-
-![Tool Tip](images/ToolTipNightLine.png)
-
-Hover your cursor over the highlighted country, and you'll see the text.
-
---- /task ---
-
-Now that we've made a simple tooltip, we can start to make it more useful. How about a tool tip which tells us if the highlighted country is in daytime or nighttime?
-
-For this, we can use the function `DaylightQ`. `DaylightQ` asks the system if it's daylight or not, and outputs either `True` or `False`. Look up `DaylightQ` in the Wolfram Documentation to find out more about how it works.
-
---- task ---
-Change the tool tip from saying 'USA' to saying `True` if a city in the highlighted country is in daytime right now, and `False` if it is in nighttime.
-
-You can replace code from the previous task with this new code.
-
+CountryData[]
 ```
-GeoGraphics[
- {
-  NightHemisphere[],
-  EdgeForm[Black],
-  FaceForm[Red],
-  Tooltip[
-   {Polygon[United States]},
-   "Is it Daytime?" DaylightQ[New York City]
-   ]
-  },
- GeoRange -> "World"]
- ```
- 
- ![Tool Tip](images/ToolTipInfo.png)
- 
---- /task ---
+![Country Data](images/CountryData.png)
 
---- collapse ---
----
-title: How to Build an If Statement
----
-
-The first thing in the If statment is the test. The test will render True or False. The second item in the If statement is what the code will return if the test is True, and the third is what the statement will return if the test is False
-
- ![If Statement](images/If.png)
---- /collapse ---
-
-We made it a little easier for people to get information from our map by adding the ability to hover over the country and find out if it is currently day or night. But at the moment, the tooltip only says 'True' or 'False'. It would be better to have the tool tip say 'It's Daytime' or 'It's Nighttime' instead.
-
-In order to do this, we need an If statement.
+We can use `Manipulate` to make an interactive drop down list. `Manipulate` lets us use x as a placeholder, and then to replace x with a value that the user chooses. In order to create a `Manipulate`, we need to have a function with a placeholder variable, and a list of possibilities for what x could be.
 
 --- task ---
-Build an If statement which shows 'It's Daytime' on the tooltip if `DaylightQ` is True, and 'It's Nighttime' if `DaylightQ` is False.
 
-You can replace code from the previous task with this new code.
-
+ Incorporate the code you used to create the map highlighting the USA into a `Manipulate`, with the options for the polygon shape coming from `CountryData`.
+ 
  ```
+ Manipulate[
  GeoGraphics[
- {
-  NightHemisphere[],
-  EdgeForm[Black],
-  FaceForm[Red],
-  Tooltip[
-   {Polygon[United States]},
-   If[
-    DaylightQ[New York City],
-    "It's Daytime",
-     "It's Nighttime!"
-    ]
-   ]
-  },
- GeoRange -> "World"]
- ```
-  ![Daytime Tool Tip](images/ToolTipDaytime.png)
-
---- /task ---
-
-Now that we have an If Statement, we can add in some more information. It would be interesting to know, if it's daytime, when sunset will be, and if it's night time, when sunrise will be. We can find this information using the `Sunset[]` and `Sunrise[]` functions, and then taking the `TimeObject[]` of each of those functions. You need to use a city in the `Sunset[]` and `Sunrise[]` functions.
-
---- task ---
-
-Extend your If statement to include What time the sunset will be if it's Daytime, and what time the sunrise will be if it's nighttime.
-
-You can replace code from the previous task with this new code.
-
-```
-GeoGraphics[
- {
-  NightHemisphere[],
-  EdgeForm[Black],
-  FaceForm[Red],
-  Tooltip[
-   Polygon[United States],
-   If[DaylightQ[New York City],
-    "It's Daytime! Sunset is at: "  TimeObject[
-      Sunset[New York City]],
-     "It's Nighttime! Sunrise is at: "  TimeObject[
-      Sunrise[New York City]]
-    ]
-   ]
-  },
- GeoRange -> "World"]
+  {NightHemisphere[],
+   {EdgeForm[Black],
+    FaceForm[Red],
+    Polygon[x]}
+   },
+  GeoRange -> "World"],
+ {x, CountryData[]}
+ ]
+ 
  ```
 --- /task ---
+
+If you are using Wolfram in a browser, you may find that this takes a minute or so to run.
+
+Now we can select any country, and the map will change to highlight our selection!

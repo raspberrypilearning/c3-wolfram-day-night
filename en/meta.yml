@@ -10,6 +10,8 @@ steps:
   - title: Building a Map
   - title: Highlighting a Country
   - title: Combining Features
-  - title: Adding Information to Your Map
   - title: Making your Map Interactive
-  - title: Building the Interactive Map
+  - title: Adding Information to Your Map
+  - title: Completing your Map
+  - title: "Challenge: Building a Tooltip"
+    challenge: true

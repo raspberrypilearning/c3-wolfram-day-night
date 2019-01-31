@@ -3,6 +3,7 @@
 So far, you've developed two features for your map: the night hemisphere, and highlighting a country. Now let's combine the two features into one map.
 
 ![Ploygon and NightTerminator](images/CombiningFeatures.png)
+
 --- task --- 
 
 Combine the two features you've made into one map function.
@@ -20,7 +21,7 @@ GeoGraphics[
  ```
  --- /task --- 
  
-Can you see how we put NightHemisphere and the Polygon into a list using `{}`? Putting different features into lists makes Wolfram treat them as one entity, which means that the GeoGraphics function can implement lots of things at the same time.
+Can you see how we put NightHemisphere and the Polygon into a list using `{}`? Putting different features into lists makes Wolfram treat them as one entity, which means that the GeoGraphics function can do lots of things at the same time.
 
 
 --- collapse ---

@@ -1,51 +1,75 @@
-## Making your Map Interactive
+## Adding Information to Your Map
 
-So far, you've created a world map with the day and night hemispheres, where you can see a specific country, hover over that country to find out if it's day time or night time, and when the sun will rise or set. But what if you don't want to see information for the United States? It would take too much effort to change the code every time you wanted to see a different country. You could set up a little tool which allows your user to chose a country from a drop down menu.
+In this step, you're going to add a `Dynamic` sentence to your map, so that when the user selects a country, a sentence appears above the map, telling them information about that country.
 
-In order to make a drop down menu of countries, we're going to need a list of every country in the world. Luckily, Wolfram has one built in!
-
-```
-CountryData[]
-```
-![Country Data](images/CountryData.png)
-
-We can use `Manipulate` to make an interactive drop down list. `Manipulate` lets us use x as a placeholder, and then to replace x with a value that the user chooses. In order to create a `Manipulate`, we need to have a function with a placeholder variable, and a list of possibilities for what x could be.
+`Dynamic` allows us to use whatever value the placeholder that `Manipulate` is representing.
 
 --- task ---
-
-Look at your original code for a simple map highlighting the USA:
+First, make a `Dynamic` sentence which displays the name of the country when you select one from the drop down menu.
 
 ```
-GeoGraphics[
- {
-  NightHemisphere[],
-  EdgeForm[Black],
-  FaceForm[Red],
-  Polygon[United States]
-  },
- GeoRange -> "World"]
- 
- ```
- 
- Incorporate this code into a `Manipulate`, with the options for the polygon shape coming from `CountryData`.
- 
- ```
-Manipulate[
-GeoGraphics[
- {
-  NightHemisphere[],
-  EdgeForm[Black],
-  FaceForm[Red],
-  Polygon[x]
-  },
- GeoRange -> "World"],
- {x, CountryData[]}
+ Manipulate[
+ GeoGraphics[
+  {NightHemisphere[],
+   {EdgeForm[Black],
+    FaceForm[Red],
+    Polygon[x]}
+   },
+  GeoRange -> "World"],
+ {x, CountryData[]},
+ Dynamic[CountryData[x, "Name"]]
  ]
- 
  ```
+
+![Manipulate with Dynamic Country Name](images/ManipulateName.png)
+
+Select a different country from the drop down menu, and check that the `Dynamic` name changes.
+
 --- /task ---
 
-Now we can select any country, and the map will change to highlight our selection!
+Now that we've added a `Dynamic` object to our `Manipulate` function, we can start to make it more useful. How about a sentence which tells us if the highlighted country is in daytime or nighttime?
 
+For this, we can use the function `DaylightQ`. `DaylightQ` asks the system if it's daylight or not, and outputs either `True` or `False`.
 
+`DaylightQ` requires us to use a city, rather than a country.
 
+You can find all the cities in a country using `CityData`
+
+```
+CityData[{All, CountryData[Entity["Country", "Togo"], "Name"]}]
+
+```
+![City Data](images/CityData.png)
+
+And, because the cities are listed in size order, you can find the largest city in a country by simply taking the `First` item in the `CityData` list.
+
+```
+First[CityData[{All, CountryData[Entity["Country", "Togo"], "Name"]}]]
+
+```
+
+--- task ---
+Change the `Dynamic` from just saying the name of the country, to also saying `True` if the largest city in the highlighted country is in daytime right now, and `False` if it is in nighttime.
+
+Remember how we used a List, with `{}`, to ask `GeoGraphics` to do multiple things at the same time? We can do the same with `Dynamic`.
+
+You can replace code from the previous task with this new code.
+
+```
+Manipulate[
+ GeoGraphics[
+ {NightHemisphere[],
+ {EdgeForm[Black],
+ FaceForm[Red],
+ Polygon[x]}},
+ GeoRange -> "World"],
+ {x, CountryData[]}, 
+ Dynamic[
+ {CountryData[x, "Name"],
+ DaylightQ[First[CityData[{All, CountryData[x, "Name"]}], 1]]}]
+ ]
+ ```
+ 
+ ![Manipulate with Day Night Information](images/ManipulateInfo.png)
+ 
+--- /task ---

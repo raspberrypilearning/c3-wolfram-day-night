@@ -14,16 +14,12 @@ title: What you will need
 ---
 ### Hardware
 
-+ Either a computer or a Raspberry Pi
++ Either a desktop computer, laptop, or a Raspberry Pi
 
 ### Software
 
 + Wolfram Language
 + This project can be completed in a web browser using [wolframcloud.com](http://lab.wolframcloud.com/app/). Log in, and click Create New Notebook.
-
-### Downloads
-
-+ [rpf.io/project-name-go](http://rpf.io/project-name-go){:target="_blank"}
 
 --- /collapse ---
 
@@ -35,6 +31,8 @@ title: What you will learn
 + Manipulating Geographic Data in the Wolfram Language
 + Using Freefrom Lingustic Input in the Wolfram Language
 + Creating interactivity in the Wolfram Language using `Manipulate`
+
+If you have never used the Wolfram Language before, follow [this guide](https://projects.raspberrypi.org/en/projects/getting-started-with-mathematica). You'll need to look at Starting Mathematica and Programming in Mathematica. If you are using the web browser version of Wolfram, you only need to look at Programming in Mathematica.
 
 --- /collapse ---
 

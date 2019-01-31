@@ -24,7 +24,3 @@ Add the Night Hemisphere to your map. Replace your previous code with your new c
 ![Night Hemisphere](images/DayNight.png)
 
 --- /task ---
-
---- task ---
-See if you can customize the map. Try using `DayNightTerminator` to add a line between the day hemisphere and the night hemisphere.
---- /task ---
