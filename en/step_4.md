@@ -2,7 +2,7 @@
 
 So far, you've developed two features for your map: the night hemisphere, and highlighting a country. Now let's combine the two features into one map.
 
-![Ploygon and NightTerminator](images/CombiningFeatures.png)
+![PoLygon and NightTerminator](images/CombiningFeatures.png)
 
 --- task --- 
 

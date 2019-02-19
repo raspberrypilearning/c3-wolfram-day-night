@@ -30,7 +30,7 @@ Manipulate[
  Row[{"It's nighttime in ", CountryData[x, "Name"]}]]]
  ]
  ```
-![Daytime Manipulate](images/ManipulateDaytime.png)
+![Daytime Manipulate](images/ManipulateItsDaytime.png)
 
 --- /task ---
 

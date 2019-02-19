@@ -6,7 +6,7 @@ Once you have a map with a NightHemisphere highlighted, it's time to highlight a
 --- task ---
 Press `[Control] + [=]` to access a Freeform Input box directly within your code, where you can type the name of a country or city.
 
-![FreeForm Lingustic Input](images/FreeForm.png)
+![FreeForm Linguistic Input](images/FreeForm.png)
 
 Highlight the United States on the map, using the Freeform Input box to type United States.
 

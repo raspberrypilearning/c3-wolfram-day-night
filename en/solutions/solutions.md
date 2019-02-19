@@ -1,26 +1,33 @@
  ```
  Manipulate[
  GeoGraphics[
- {NightHemisphere[], EdgeForm[Black], FaceForm[Red], Polygon[x]},GeoRange -> "World"],
+ {NightHemisphere[],
+ EdgeForm[Black],
+ FaceForm[Red],
+ Polygon[x]},
+ GeoRange -> "World"],
  {x, CountryData[]}, 
  Dynamic[
- If[
- DaylightQ[First[CityData[{All, CountryData[x, "Name"]}], 1]], 
- 
- Row[{"It's daytime in ",
+ If[DaylightQ[First[CityData[{All, CountryData[x, "Name"]}], 1]],
+ Row[{
+ "It's daytime in ",
  CountryData[x, "Name"],
  ". Sunset will be at: ",
- TimeObject[Sunset[First[CityData[{All, CountryData[x, "Name"]}], 1]]]}],
- 
+ TimeObject[Sunset[First[CityData[{All, CountryData[x, "Name"]}], 1]]]
+ }],
  Row[{"It's nighttime in ",
  CountryData[x, "Name"],
  ". Sunrise will be at: ",
- TimeObject[Sunrise[First[CityData[{All, CountryData[x, "Name"]}], 1]]]}]]]
+ TimeObject[Sunrise[First[CityData[{All, CountryData[x, "Name"]}], 1]]]
+ }]
+ ]]
  ]
 
 ```
 
 Challenge
+
+This challenge cannot be completed in the browser version of Wolfram. Please use the desktop application.
 
 ```
 Manipulate[
