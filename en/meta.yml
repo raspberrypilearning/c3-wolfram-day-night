@@ -1,0 +1,17 @@
+title: Day Time Night Time Interactive Map
+hero_image: images/banner.png
+description:
+version: 4
+listed: false
+copyedit: false
+last_tested: "2018-12-06"
+steps:
+  - title: Introduction
+  - title: Building a Map
+  - title: Highlighting a Country
+  - title: Combining Features
+  - title: Making your Map Interactive
+  - title: Adding Information to Your Map
+  - title: Completing your Map
+  - title: "Challenge: Building a Tooltip"
+    challenge: true
