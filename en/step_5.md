@@ -29,6 +29,8 @@ We can use `Manipulate` to make an interactive drop down list. `Manipulate` lets
  ```
 --- /task ---
 
+If you find that it takes too long to load the country data, try using `CountryData["G20"]` instead. This loads a shorter list of countries, so it should be faster.
+
 --- task ---
 Make the map a little more eye-catching by changing the edge of the highlighted country to black and filling it with red.
 
