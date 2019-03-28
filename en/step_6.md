@@ -1,11 +1,11 @@
-## Adding Information to Your Map
+## Add information to your map
 
-In this step, you're going to add a `Dynamic` sentence to your map, so that when the user selects a country, a sentence appears above the map, telling them information about that country.
+In this step, you're going to add a `Dynamic` sentence to your map. This sentence will contain information about the country the user selects.
 
-`Dynamic` allows us to use whatever value the placeholder that `Manipulate` is representing.
+`Dynamic` allows you to use the value that placeholder in `Manipulate` represents.
 
 --- task ---
-First, make a `Dynamic` sentence which displays the name of the country when you select one from the drop down menu.
+First, create a `Dynamic` sentence that displays the name of the country selected from the drop-down menu.
 
 ```
  Manipulate[
@@ -23,17 +23,17 @@ First, make a `Dynamic` sentence which displays the name of the country when you
 
 ![Manipulate with Dynamic Country Name](images/ManipulateName.png)
 
-Select a different country from the drop down menu, and check that the `Dynamic` name changes.
+Select a different country from the drop-down menu and check that the `Dynamic` name changes.
 
 --- /task ---
 
-Now that we've added a `Dynamic` object to our `Manipulate` function, we can start to make it more useful. How about a sentence which tells us if the highlighted country is in daytime or nighttime?
+Now you have a `Dynamic` object in your `Manipulate` function, you can make it more useful. As an example, you can add a sentence stating whether the highlighted country is in daytime or nighttime. Use the function `DaylightQ` to do this.
 
-For this, we can use the function `DaylightQ`. `DaylightQ` asks the system if it's daylight or not, and outputs either `True` or `False`.
++ `DaylightQ` asks the system if it's daytime or not, and outputs either `True` or `False`.
 
-`DaylightQ` requires us to use a city, rather than a country.
++ `DaylightQ` only works with a city name, rather than a country name.
 
-You can find all the cities in a country using `CityData`
+You can find all the cities in a country by using `CityData`.
 
 ```
 CityData[{All, CountryData[Entity["Country", "Togo"], "Name"]}]
@@ -41,7 +41,7 @@ CityData[{All, CountryData[Entity["Country", "Togo"], "Name"]}]
 ```
 ![City Data](images/CityData.png)
 
-And, because the cities are listed in size order, you can find the largest city in a country by simply taking the `First` item in the `CityData` list.
+`CityData` lists cities in order of size. Therefore, the `First` item in a `CityData` list is always the largest city in a country.
 
 ```
 First[CityData[{All, CountryData[Entity["Country", "Togo"], "Name"]}]]
@@ -49,11 +49,11 @@ First[CityData[{All, CountryData[Entity["Country", "Togo"], "Name"]}]]
 ```
 
 --- task ---
-Change the `Dynamic` from just saying the name of the country, to also saying `True` if the largest city in the highlighted country is in daytime right now, and `False` if it is in nighttime.
+Add code to the `Dynamic` function so that the function also says `True` if the largest city in the highlighted country is in daytime, or `False` if the city is in nighttime.
 
-Remember how we used a List, with `{}`, to ask `GeoGraphics` to do multiple things at the same time? We can do the same with `Dynamic`.
+You know how to use a list, with `{}`, to ask `GeoGraphics` to do multiple things at the same time. And you can do the same with `Dynamic`.
 
-You can replace code from the previous task with this new code.
+Replace your code with this new code:
 
 ```
 Manipulate[
@@ -70,6 +70,6 @@ Manipulate[
  ]
  ```
  
- ![Manipulate with Day Night Information](images/ManipulateInfo.png)
+![Manipulate with Day Night Information](images/ManipulateInfo.png)
  
 --- /task ---

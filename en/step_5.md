@@ -1,20 +1,19 @@
-## Making your Map Interactive
+## Make your map interactive
 
-So far, you've created a world map with the day and night hemispheres, where you can see a specific country. But what if you don't want to see information for the United States? It would take too much effort to change the code every time you wanted to see a different country. You can set up a little tool which allows your user to chose a country from a drop down menu.
+What if you don't want to see information for the country that is highlighted right now? It would be a lot of effort to change the code every time you want to see a different country. Instead, you can set up a drop-down menu that allows your user to choose a country.
 
-In order to make a drop down menu of countries, we're going to need a list of every country in the world. Luckily, Wolfram has one built in!
+To make a drop-down menu of countries, you need a list of every country in the world. Luckily, Wolfram has one built in!
 
 ```
 CountryData[]
 ```
 ![Country Data](images/CountryData.png)
 
-We can use `Manipulate` to make an interactive drop down list. `Manipulate` lets us use `x` as a placeholder, and then to replace `x` with a value that the user chooses. In order to create a `Manipulate`, we need to have a function with a placeholder variable, and a list of possibilities for what x could be.
+With `Manipulate`, you can make an interactive drop-down menu. `Manipulate` lets you set `x` as a placeholder. The user can then replace `x` with a value. In order to create a `Manipulate` statement, you need a function with a placeholder variable and a list of possibilities for `x`.
 
 --- task ---
+Move the code that creates the map highlighting the USA **inside** a `Manipulate` statement, with the options for the `Polygon` coming from `CountryData`.
 
- Incorporate the code you used to create the map highlighting the USA into a `Manipulate`, with the options for the polygon shape coming from `CountryData`.
- 
  ```
  Manipulate[
  GeoGraphics[
@@ -29,9 +28,10 @@ We can use `Manipulate` to make an interactive drop down list. `Manipulate` lets
  ```
 --- /task ---
 
-If you find that it takes too long to load the country data, try using `CountryData["G20"]` instead. This loads a shorter list of countries, so it should be faster.
+If you find that it takes too long to load the country data, try using `CountryData["G20"]` instead. This should be faster because it loads a shorter list of countries.
 
 --- task ---
+
 Make the map a little more eye-catching by changing the edge of the highlighted country to black and filling it with red.
 
 --- hints ---
@@ -39,7 +39,7 @@ Make the map a little more eye-catching by changing the edge of the highlighted 
 The `EdgeForm` and `FaceForm` functions set the colours.
 --- /hint ---
 --- hint ---
-You can see those functions in the code you already have:
+You can see these functions in the code you already have:
 
 ```
 EdgeForm[Yellow],
@@ -49,4 +49,4 @@ FaceForm[Gray],
 --- /hints ---
 --- /task ---
 
-Now we can select any country, and the map will change to highlight our selection!
+Now you can select any country, and the map will change to highlight your selection!

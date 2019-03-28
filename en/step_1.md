@@ -1,6 +1,6 @@
-## Day Time Night Time Interactive Map
+## Daytime-nighttime interactive map
 
-In this project, you'll use the Wolfram Language to create an interactive map which helps you find out where in the world is in day time, where is in night time, and when each country will switch between day and night.
+In this project, you'll use the Wolfram Language to create an interactive map which shows where in the world it is daytime, where it is nighttime, and when each country switches between day and night.
 
 ### What you will make
 
@@ -14,11 +14,11 @@ title: What you will need
 ---
 ### Hardware
 
-+ A computer: desktop, laptop, or a Raspberry Pi
++ A computer (desktop, laptop, or Raspberry Pi)
 
 ### Software
 
-+ Wolfram Language — this is available for free on the Raspberry Pi as part of NOOBS
++ Wolfram Language, available for free on the Raspberry Pi as part of the official operating system, Raspbian
 --- /collapse ---
 
 --- collapse ---
@@ -26,9 +26,9 @@ title: What you will need
 title: What you will learn
 ---
 
-+ Manipulating Geographic Data in the Wolfram Language
-+ Using Freefrom Lingustic Input in the Wolfram Language
-+ Creating interactivity in the Wolfram Language using `Manipulate`
++ How to manipulate geographic data
++ How to use Free-Form Lingustic Input
++ How to create interactivity using `Manipulate`
 
 If you have never used the Wolfram Language before, follow [this guide](https://projects.raspberrypi.org/en/projects/getting-started-with-mathematica). You'll need to look at Starting Mathematica and Programming in Mathematica. If you are using the web browser version of Wolfram, you only need to look at Programming in Mathematica.
 
