@@ -1,12 +1,12 @@
-## Combining Features
+## Combine features
 
-So far, you've developed two features for your map: the night hemisphere, and highlighting a country. Now let's combine the two features into one map.
+So far, you know how to add two features to a map: the night hemisphere and a highlighted country. Now combine the two features on one map.
 
 ![PoLygon and NightTerminator](images/CombiningFeatures.png)
 
 --- task --- 
 
-Combine the two features you've made into one map function.
+Add this code to combine the two features on one map function.
 
 ```
 GeoGraphics[
@@ -21,15 +21,16 @@ GeoGraphics[
  ```
  --- /task --- 
  
-Can you see how we put NightHemisphere and the Polygon into a list using `{}`? Putting different features into lists makes Wolfram treat them as one entity, which means that the GeoGraphics function can do lots of things at the same time.
+Notice that `NightHemisphere` and `Polygon` are in a list using `{}`.
 
+When different features are in one list, Wolfram treat them as one entity. This means that the `GeoGraphics` function can do lots of things at the same time.
 
 --- collapse ---
 ---
-title: Day and Night Hemispheres
+title: Day and night hemispheres
 ---
 
-Interestingly, the NightHemisphere line will look different depending on the time of year, even though the shape of the night line doesn't change through the year. This is because the night line falls differently on this projection of the map, causing some distortion. On a globe, this line would be straight all the way around. You can see below how the line changes each month through the year.
+Interestingly, the line indicating the night hemisphere looks different depending on the time of year, even though the shape of the night line doesn't change through the year. This is because the night line falls differently on this projection of the map, which causes some distortion. On a globe, the line would be straight all the way around. You can see below how the line is different each month through the year.
 
 
 ![Difference in DayNight Terminator](images/Months.png)

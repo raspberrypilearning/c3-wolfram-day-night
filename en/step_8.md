@@ -1,14 +1,14 @@
-## Challenge: Building a Tooltip
+## Challenge: build a ToolTip
 
-Try to use a `Tooltip` instead of a `Dynamic` sentence to show information about the country. A `ToolTip` allows the user to hover their mouse over the country, and see the information in a little box.
+A `ToolTip` allows the user to hover their mouse cursor over a country to see information in a little pop-up box. Replace the `Dynamic` sentence with a `ToolTip` displaying information about the country. 
 
-`ToolTip` takes two arguments: the object the user will hover over (the `Polygon`), and the information the user will see when they hover (the `If` statement with `Daytime` and `Nighttime` information).
+`ToolTip` takes two arguments: the object the cursor hovers over (the `Polygon`), and the information to be displayed to the user (the `If` statement with `Daytime` and `Nighttime` information).
 
 --- hints---
 --- hint ---
-You can use the same code for your `If` statement as you did in the main project.
+You can use the same code for your `If` statement as before.
 --- /hint---
 --- hint---
-`ToolTip` needs to go around `Polygon[x]`. `Polygon[x]` should be the first argument in `ToolTip`, followed by your `If` statement.
+`ToolTip` needs to surround the `Polygon[x]` code you already have. `Polygon[x]` should be the first argument in `ToolTip`, and the second argument should be the `If` statement.
 --- /hint---
 ---/hints---
