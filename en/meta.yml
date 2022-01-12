@@ -1,17 +1,20 @@
+---
 title: Day and night
 hero_image: images/banner.png
 description:
 version: 4
 listed: true
 copyedit: true
-last_tested: "2018-12-06"
+last_tested: '2018-12-06'
 steps:
-  - title: Introduction
-  - title: Build a map
-  - title: Highlight a country
-  - title: Combine features
-  - title: Make your map interactive
-  - title: Add information to your map
-  - title: Complete your map
-  - title: "Challenge: build a ToolTip"
-    challenge: true
+- title: Introduction
+  completion: engaged
+- title: Build a map
+- title: Highlight a country
+- title: Combine features
+- title: Make your map interactive
+- title: Add information to your map
+  completion: internal
+- title: Complete your map
+- title: 'Challenge: build a ToolTip'
+  challenge: true
